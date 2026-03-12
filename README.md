@@ -52,7 +52,7 @@ cp -r .config/* ~/.config/
 Restart Sway:
 
 ```
-Mod + Shift + R
+Mod + Shift + C
 ```
 
 ## 🎨 Features
