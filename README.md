@@ -11,7 +11,7 @@ A minimal **Sway rice** based on the Tokyo Night color palette.
 * Window Manager: Sway
 * Bar: Waybar
 * Launcher: Rofi
-* Terminal: Kitty
+* Terminal: foot
 * Icon Theme: Papirus
 * Theme: Tokyo Night inspired
 
@@ -22,17 +22,14 @@ Install these packages:
 * sway
 * waybar
 * rofi
-* kitty
+* foot
 * papirus-icon-theme
 * grim
-* slurp
-* feh
-* picom
 
 On Fedora:
 
 ```
-sudo dnf install sway waybar rofi kitty papirus-icon-theme grim slurp
+sudo dnf install sway waybar rofi foot papirus-icon-theme grim
 ```
 
 ## 📁 Installation
