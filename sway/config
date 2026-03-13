@@ -261,4 +261,8 @@ client.urgent           $red     $red     $bg   $red     $red
 # Remove the top bar that displays names
 for_window [class=".*"] border pixel 2
 
+# Add key binds to move to previous and next work spaces
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
