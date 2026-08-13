@@ -19,6 +19,8 @@ font pango:IBM Plex Sans 12.5
 # Your preferred terminal emulator
 # Recommends: foot
 set $term foot
+set $browser firefox
+set $editor code
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -39,11 +41,11 @@ output * bg ~/.config/sway/Images/Bg.jpg fill
 output eDP-1 scale 1.25
 
 ### Idle configuration
+exec swayidle -w \
+    timeout 360 'swaylock -f -i ~/.config/sway/Images/LockScreen.jpg' \
+    before-sleep 'swaylock -f -i ~/.config/sway/Images/LockScreen.jpg'
 #
- exec swayidle -w \
-          timeout 360 'swaylock -f -i ~/.config/sway/Images/LockScreen.jpg' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -i ~/.config/sway/Images/LockScreen.jpg'
+bindsym $mod+Ctrl+i exec ~/.config/sway/toggle-idle.sh
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -73,6 +75,12 @@ input type:touchpad {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    # Start a firefox session
+    bindsym $mod+Shift+b exec $browser
+
+    # Start open vs code
+    bindsym $mod+Shift+t exec $editor
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -227,8 +235,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Shortcut to take a screen shot
-    bindsym Shift+F10 exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%s).png
 
 # The windows
 
@@ -239,7 +245,7 @@ default_floating_border pixel 2
 gaps inner 6
 gaps outer 4
 
-smart_gaps off
+smart_gaps on
 smart_borders on
 # Hide borders at screen edges
 hide_edge_borders both
@@ -273,3 +279,5 @@ exec_always wl-paste --type image --watch cliphist store
 exec udiskie
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+
+
