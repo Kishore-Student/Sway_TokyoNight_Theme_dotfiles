@@ -81,12 +81,17 @@ input type:touchpad {
 
     # Start open vs code
     bindsym $mod+Shift+t exec $editor
-
+   
+    # Start firefox private window
+    bindsym $mod+p exec firefox --private-window
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    
+    #Start dolphin file manager
+    bindsym $mod+Shift+f exec dolphin
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
