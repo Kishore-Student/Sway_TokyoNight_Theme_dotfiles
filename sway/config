@@ -86,8 +86,10 @@ input type:touchpad {
     bindsym $mod+p exec firefox --private-window
     # Kill focused window
     bindsym $mod+Shift+q kill
+   # Add show screen using HDMI display
+    bindsym $mod+Shift+m exec ~/.config/sway/toggle-mirror.sh
 
-    # Start your launcher
+   # Start your launcher
     bindsym $mod+d exec $menu
     
     #Start dolphin file manager
